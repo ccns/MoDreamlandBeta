@@ -45,10 +45,10 @@ public class MainActivity extends ActionBarActivity {
         pwET = (EditText) findViewById(R.id.pw);
 
         SharedPreferences sp = PreferenceManager.getDefaultSharedPreferences(this);
-        user = sp.getString("user", "danielchen");
-        pw = sp.getString("pw", "a2760815");
+        user = sp.getString("user", "");
+        pw = sp.getString("pw", "");
         del = sp.getBoolean("del", false);
-        auto = sp.getBoolean("auto", true);
+        auto = sp.getBoolean("auto", false);
         remember = sp.getBoolean("remember", false);
 
         userET.setText(user);
@@ -109,8 +109,6 @@ public class MainActivity extends ActionBarActivity {
             }
         });
     }
-
-    Intent i = getIntent();
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
